@@ -1,18 +1,23 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavbarRightComponent } from './NavbarRightComponent.jsx'
+import { UserContext } from '../context/UserContext.jsx'
+import { useContext } from 'react'
 
-function Header({user}) {
+function Header() {
+
+  const {user} = useContext(UserContext);
+
   return (
     <Navbar className="bg-body-tertiary">
       <Container>
         <Navbar.Brand href="#home">
-          React Context API
+          React Context API - {user.username}
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            <NavbarRightComponent user={user} />
+            <NavbarRightComponent />
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>

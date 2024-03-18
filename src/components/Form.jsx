@@ -1,9 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { UserContext } from '../context/UserContext.jsx'
 
-function CustomForm({user, setUserInParentComponent}) {
-
+function CustomForm() {
+  const {user, setUser } = useContext(UserContext);
   const [userObject, setUserObject] = useState(user);
   function changeUsernameHandler(event){
     console.log("new username: ", event.target.value );
@@ -34,8 +35,9 @@ function CustomForm({user, setUserInParentComponent}) {
   //this sets the user object(state) in parent component on form submit event
   function onSubmit(e){
     e.preventDefault();
-    setUserInParentComponent(userObject);
+    setUser(userObject);
   }
+
 
   return (
     <Form style={{ paddingTop: 100, maxWidth: 400, marginLeft: 'auto', marginRight: 'auto'}}>
