@@ -5,7 +5,8 @@ import './App.css'
 import { Header } from './components/Header.jsx'
 import 'bootstrap/dist/css/bootstrap.css'
 import { CustomForm } from './components/Form.jsx'
-import { UserContext } from './context/UserContext.jsx'
+import { AppContext } from './context/UserContext.jsx'
+import { ProductComponent } from './components/ProductComponent.jsx'
 
 
 function App() {
@@ -18,14 +19,14 @@ function App() {
   }
 
   const [user, setUser] = useState(initialUser);
-  // const [basket, setBasket] = useState(initialUser);
+  const [basket, setBasket] = useState({items: []});
 
-  const value = { user, setUser};
-  // const basketValue = { basket, setBasket};
+  // define initial values to pass to AppContext
+  const appContextValues = { user, setUser, basket, setBasket };
 
   return (
     <>
-      <UserContext.Provider value={value} >
+      <AppContext.Provider value={appContextValues} >
         <div>
           <Header />
           <a href="https://react.dev" target="_blank">
@@ -34,7 +35,8 @@ function App() {
         </div>
         <h2> React Context API</h2>
         <CustomForm />
-    </UserContext.Provider>
+        <ProductComponent />
+    </AppContext.Provider>
 
     </>
   )

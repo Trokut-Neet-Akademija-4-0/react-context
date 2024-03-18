@@ -1,10 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useContext, useState } from 'react'
-import { UserContext } from '../context/UserContext.jsx'
+import { AppContext } from '../context/UserContext.jsx'
 
 function CustomForm() {
-  const {user, setUser } = useContext(UserContext);
+  const {user, setUser } = useContext(AppContext);
   const [userObject, setUserObject] = useState(user);
   function changeUsernameHandler(event){
     console.log("new username: ", event.target.value );

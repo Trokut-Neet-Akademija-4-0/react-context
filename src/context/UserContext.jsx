@@ -1,8 +1,10 @@
 import { createContext } from 'react';
 
-const UserContext = createContext({
+const AppContext = createContext({
   user: {},
-  setUser: () => {}
+  setUser: () => {},
+  basket: {},
+  setBasket: () => {}
 });
 
-export { UserContext }
+export { AppContext }

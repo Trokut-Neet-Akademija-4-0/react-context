@@ -1,12 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavbarRightComponent } from './NavbarRightComponent.jsx'
-import { UserContext } from '../context/UserContext.jsx'
+import { AppContext } from '../context/UserContext.jsx'
 import { useContext } from 'react'
 
 function Header() {
 
-  const {user} = useContext(UserContext);
+  const {user} = useContext(AppContext);
 
   return (
     <Navbar className="bg-body-tertiary">

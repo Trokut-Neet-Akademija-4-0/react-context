@@ -1,13 +1,14 @@
 
 import { useContext } from 'react';
-import { UserContext } from '../context/UserContext.jsx'
+import { AppContext } from '../context/UserContext.jsx'
 
 function NavbarRightComponent(){
-  const {user, setUser } = useContext(UserContext);
+  const {user,basket } = useContext(AppContext);
 
   return (
     <>
       Signed in as: <a href="#login">{user.username}</a>
+      &nbsp; &nbsp; items in basket → {basket.items.length}
     </>
   )
 }
