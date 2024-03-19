@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Header } from './components/Header.jsx'
 import 'bootstrap/dist/css/bootstrap.css'
 import { CustomForm } from './components/Form.jsx'
 import { AppContext } from './context/UserContext.jsx'
 import { ProductComponent } from './components/ProductComponent.jsx'
+import Container from 'react-bootstrap/Container'
+import { Row } from 'react-bootstrap'
 
 
 function App() {
@@ -35,7 +36,15 @@ function App() {
         </div>
         <h2> React Context API</h2>
         <CustomForm />
-        <ProductComponent />
+        <Container>
+          <Row className={'mb-5 mt-5'}>
+            <ProductComponent title={"Asus Mouse"} />
+            <ProductComponent title={"Masus aus"} />
+            <ProductComponent title={"Suas mas"}/>
+            <ProductComponent title={"Susa mus"}/>
+          </Row>
+        </Container>
+
     </AppContext.Provider>
 
     </>
